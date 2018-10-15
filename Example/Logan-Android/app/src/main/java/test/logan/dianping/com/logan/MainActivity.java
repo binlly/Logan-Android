@@ -58,10 +58,10 @@ public class MainActivity extends Activity {
     }
 
     private void initData() {
-        LoganConfig config = new LoganConfig.Builder()
-                .setCachePath(getApplicationContext().getFilesDir().getAbsolutePath())
-                .setPath(getApplicationContext().getExternalFilesDir(null).getAbsolutePath()
-                        + File.separator + FILE_NAME)
+        LoganConfig config = new LoganConfig.Builder().setCachePath(getApplicationContext().getFilesDir()
+                .getAbsolutePath())
+                .setPath(getApplicationContext().getExternalFilesDir(null)
+                        .getAbsolutePath() + File.separator + FILE_NAME)
                 .setEncryptKey16("0123456789012345".getBytes())
                 .setEncryptIV16("0123456789012345".getBytes())
                 .build();
@@ -139,8 +139,11 @@ public class MainActivity extends Activity {
         if (map != null) {
             StringBuilder info = new StringBuilder();
             for (Map.Entry<String, Long> entry : map.entrySet()) {
-                info.append("文件日期：").append(entry.getKey()).append("  文件大小（bytes）：").append(
-                        entry.getValue()).append("\n");
+                info.append("文件日期：")
+                        .append(entry.getKey())
+                        .append("  文件大小（bytes）：")
+                        .append(entry.getValue())
+                        .append("\n");
             }
             mTvInfo.setText(info.toString());
         }
