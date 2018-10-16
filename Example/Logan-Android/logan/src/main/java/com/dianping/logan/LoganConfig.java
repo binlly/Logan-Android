@@ -1,24 +1,4 @@
-/*
- * Copyright (c) 2018-present, 美团点评
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in
- * all copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- * THE SOFTWARE.
- */
+
 
 package com.dianping.logan;
 
@@ -28,8 +8,8 @@ public class LoganConfig {
 
     private static final long DAYS = 24 * 60 * 60 * 1000; //天
     private static final long M = 1024 * 1024; //M
-    private static final long DEFAULT_DAY = 7 * DAYS; //默认删除天数
-    private static final long DEFAULT_FILE_SIZE = 10 * M;
+    private static final long DEFAULT_DAY = 3 * DAYS; //默认删除天数
+    private static final long DEFAULT_FILE_SIZE = 1 * M;
     private static final long DEFAULT_MIN_SDCARD_SIZE = 50 * M; //最小的SD卡小于这个大小不写入
     private static final int DEFAULT_QUEUE = 500;
 
@@ -46,8 +26,8 @@ public class LoganConfig {
 
     boolean isValid() {
         boolean valid = false;
-        if (!TextUtils.isEmpty(mCachePath) && !TextUtils.isEmpty(mPathPath) && mEncryptKey16 != null
-                && mEncryptIv16 != null) {
+        if (!TextUtils.isEmpty(mCachePath) && !TextUtils.isEmpty(mPathPath) && mEncryptKey16 != null && mEncryptIv16
+                != null) {
             valid = true;
         }
         return valid;
