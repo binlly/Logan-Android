@@ -3,13 +3,13 @@ cmake_minimum_required(VERSION 3.4.1)
 SET (CMAKE_C_FLAGS_DEBUG          "-g")
 SET (CMAKE_C_FLAGS_RELEASE        "-O2 -DNDEBUG")
 
-set(EXTERN_DIR ../Clogan)
+set(EXTERN_DIR ../CLogx)
 
-add_subdirectory(${EXTERN_DIR} clogan.out)
+add_subdirectory(${EXTERN_DIR} clogx.out)
 
 include_directories(${EXTERN_DIR})
 
-link_directories(clogan.out)
+link_directories(clogx.out)
 
 
 find_library( # Sets the name of the path variable.
@@ -23,5 +23,5 @@ find_library( # Sets the name of the path variable.
 # can link multiple libraries, such as libraries you define in this
 # build script, prebuilt third-party libraries, or system libraries.
 
-add_library(logan SHARED src/main/jni/clogan_protocol.c)
-target_link_libraries(logan ${log-lib} z clogan)
+add_library(logx SHARED src/main/jni/clogx_protocol.c)
+target_link_libraries(logx ${log-lib} z clogx)

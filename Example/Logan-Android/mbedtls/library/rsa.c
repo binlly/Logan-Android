@@ -1674,7 +1674,7 @@ void mbedtls_rsa_free( mbedtls_rsa_context *ctx )
 /*
  * Example RSA-1024 keypair, for test purposes
  */
-#define KEY_LEN_CLOGAN 128
+#define KEY_LEN_CLOGX 128
 
 #define RSA_N   "9292758453063D803DD603D5E777D788" \
                 "8ED1D5BF35786190FA2F23EBC0848AEA" \
@@ -1721,7 +1721,7 @@ void mbedtls_rsa_free( mbedtls_rsa_context *ctx )
                 "F5A3B2A5D33605AEBBCCBA7FEB9F2D2F" \
                 "A74206CEC169D74BF5A8C50D6F48EA08"
 
-#define PT_LEN_CLOGAN  24
+#define PT_LEN_CLOGX  24
 #define RSA_PT  "\xAA\xBB\xCC\x03\x02\x01\x00\xFF\xFF\xFF\xFF\xFF" \
                 "\x11\x22\x33\x0A\x0B\x0C\xCC\xDD\xDD\xDD\xDD\xDD"
 
@@ -1756,16 +1756,16 @@ int mbedtls_rsa_self_test( int verbose )
 #if defined(MBEDTLS_PKCS1_V15)
     size_t len;
     mbedtls_rsa_context rsa;
-    unsigned char rsa_plaintext[PT_LEN_CLOGAN];
-    unsigned char rsa_decrypted[PT_LEN_CLOGAN];
-    unsigned char rsa_ciphertext[KEY_LEN_CLOGAN];
+    unsigned char rsa_plaintext[PT_LEN_CLOGX];
+    unsigned char rsa_decrypted[PT_LEN_CLOGX];
+    unsigned char rsa_ciphertext[KEY_LEN_CLOGX];
 #if defined(MBEDTLS_SHA1_C)
     unsigned char sha1sum[20];
 #endif
 
     mbedtls_rsa_init( &rsa, MBEDTLS_RSA_PKCS_V15, 0 );
 
-    rsa.len = KEY_LEN_CLOGAN;
+    rsa.len = KEY_LEN_CLOGX;
     MBEDTLS_MPI_CHK( mbedtls_mpi_read_string( &rsa.N , 16, RSA_N  ) );
     MBEDTLS_MPI_CHK( mbedtls_mpi_read_string( &rsa.E , 16, RSA_E  ) );
     MBEDTLS_MPI_CHK( mbedtls_mpi_read_string( &rsa.D , 16, RSA_D  ) );
@@ -1790,9 +1790,9 @@ int mbedtls_rsa_self_test( int verbose )
     if( verbose != 0 )
         mbedtls_printf( "passed\n  PKCS#1 encryption : " );
 
-    memcpy( rsa_plaintext, RSA_PT, PT_LEN_CLOGAN );
+    memcpy( rsa_plaintext, RSA_PT, PT_LEN_CLOGX );
 
-    if( mbedtls_rsa_pkcs1_encrypt( &rsa, myrand, NULL, MBEDTLS_RSA_PUBLIC, PT_LEN_CLOGAN,
+    if( mbedtls_rsa_pkcs1_encrypt( &rsa, myrand, NULL, MBEDTLS_RSA_PUBLIC, PT_LEN_CLOGX,
                            rsa_plaintext, rsa_ciphertext ) != 0 )
     {
         if( verbose != 0 )
@@ -1829,7 +1829,7 @@ int mbedtls_rsa_self_test( int verbose )
     if( verbose != 0 )
         mbedtls_printf( "  PKCS#1 data sign  : " );
 
-    mbedtls_sha1( rsa_plaintext, PT_LEN_CLOGAN, sha1sum );
+    mbedtls_sha1( rsa_plaintext, PT_LEN_CLOGX, sha1sum );
 
     if( mbedtls_rsa_pkcs1_sign( &rsa, myrand, NULL, MBEDTLS_RSA_PRIVATE, MBEDTLS_MD_SHA1, 0,
                         sha1sum, rsa_ciphertext ) != 0 )

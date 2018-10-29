@@ -24,10 +24,10 @@
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
 
--keep public class com.dianping.logan.CLoganProtocol{ *; }
--keep public class com.dianping.logan.Logan{ *; }
--keep public class com.dianping.logan.LoganConfig{ *; }
--keep public class com.dianping.logan.LoganConfig$Builder{ *; }
--keep public class com.dianping.logan.SendLogRunnable{ *; }
--keep public interface com.dianping.logan.LoganProtocolHandler{ *; }
--keep public interface com.dianping.logan.OnLoganProtocolStatus{ *; }
+-keep public class com.yy.logx.CLogxProtocol{ *; }
+-keep public class com.yy.logx.Logx{ *; }
+-keep public class com.yy.logx.LogxConfig{ *; }
+-keep public class com.yy.logx.LogxConfig$Builder{ *; }
+-keep public class com.yy.logx.SendLogRunnable{ *; }
+-keep public interface com.yy.logx.LogxProtocolHandler{ *; }
+-keep public interface com.yy.logx.OnLogxProtocolStatus{ *; }

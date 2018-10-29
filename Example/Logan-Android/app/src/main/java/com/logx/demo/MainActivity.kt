@@ -3,8 +3,8 @@ package com.logx.demo
 import android.app.Activity
 import android.os.Bundle
 import android.util.Log
-import com.yy.logx.Logan
-import com.yy.logx.LoganConfig
+import com.yy.logx.Logx
+import com.yy.logx.LogxConfig
 import kotlinx.android.synthetic.main.activity_main.*
 
 /**
@@ -22,28 +22,28 @@ class MainActivity: Activity() {
     }
 
     private fun initData() {
-        val config = LoganConfig.Builder()
+        val config = LogxConfig.Builder()
             .setCachePath(applicationContext.filesDir.absolutePath)
             .setPath(getExternalFilesDir(FILE_NAME)?.absolutePath)
             .setEncryptKey16("0123456789012345".toByteArray())
             .setEncryptIV16("0123456789012345".toByteArray())
             .build()
-        Logan.init(config)
-        Logan.setDebug(true)
-        Logan.setOnLoganProtocolStatus { cmd, code -> Log.d(TAG, "clogan > cmd : $cmd | code : $code") }
+        Logx.init(config)
+        Logx.setDebug(true)
+        Logx.setOnLogxProtocolStatus { cmd, code -> Log.d(TAG, "clogx > cmd : $cmd | code : $code") }
     }
 
     private fun initView() {
-        button_write.setOnClickListener { loganTest() }
-        button_read.setOnClickListener { loganFilesInfo() }
+        button_write.setOnClickListener { logxTest() }
+        button_read.setOnClickListener { logxFilesInfo() }
     }
 
-    private fun loganTest() {
+    private fun logxTest() {
         Thread {
             try {
                 for (i in 0..10) {
                     Log.d(TAG, "times : $i")
-                    Logan.w("Test ${System.currentTimeMillis()} - $i", i % 3)
+                    Logx.w("Test ${System.currentTimeMillis()} - $i", i % 3)
                     Thread.sleep(5)
                 }
                 Log.d(TAG, "write log end")
@@ -53,8 +53,8 @@ class MainActivity: Activity() {
         }.start()
     }
 
-    private fun loganFilesInfo() {
-        val map = Logan.getAllFilesInfo()
+    private fun logxFilesInfo() {
+        val map = Logx.getAllFilesInfo()
         if (map != null) {
             val info = StringBuilder()
             for ((key, value) in map) {
