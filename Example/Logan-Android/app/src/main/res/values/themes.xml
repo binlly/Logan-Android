@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="FeedbackTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="fbColorAccent">@color/colorWhite</item>
+        <item name="fbColorPrimary">@color/colorPrimary</item>
+        <item name="fbDividerColor">@color/colorDivider</item>
+        <item name="fbButtonTextSize">@dimen/button_text_size</item>
+
+        <item name="actionMenuTextColor">@color/colorWhite</item>
+
+        <item name="fbLogV">@color/logV</item>
+        <item name="fbLogD">@color/logD</item>
+        <item name="fbLogI">@color/logI</item>
+        <item name="fbLogW">@color/logW</item>
+        <item name="fbLogE">@color/logE</item>
+    </style>
+
+    <style name="FullScreenTheme" parent="FeedbackTheme">
+        <item name="android:windowBackground">@color/colorBlack</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Translucent</item>
+    </style>
+
+</resources>

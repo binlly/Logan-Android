@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="FBToolbarStyle">
+        <item name="actionMenuTextColor">?attr/fbColorAccent</item>
+        <item name="android:actionMenuTextColor">?attr/fbColorAccent</item>
+        <item name="titleTextColor">?attr/fbColorAccent</item>
+        <item name="android:background">?attr/fbColorPrimary</item>
+        <item name="android:minHeight">?android:attr/actionBarSize</item>
+        <item name="android:height">?android:attr/actionBarSize</item>
+        <item name="theme">@style/ThemeOverlay.AppCompat.Dark</item>
+    </style>
+
+    <style name="FBButtonTextStyle">
+        <item name="android:textSize">?attr/fbButtonTextSize</item>
+        <item name="android:textColor">?attr/fbColorAccent</item>
+        <item name="android:background">?attr/fbColorPrimary</item>
+    </style>
+
+</resources>

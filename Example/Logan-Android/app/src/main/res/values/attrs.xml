@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="FeedbackTheme">
+        <attr name="fbColorPrimary" format="color|reference"/>
+        <attr name="fbColorAccent" format="color|reference"/>
+        <attr name="fbDividerColor" format="color|reference"/>
+        <attr name="fbButtonTextSize" format="dimension"/>
+
+        <attr name="fbLogV" format="color"/>
+        <attr name="fbLogD" format="color"/>
+        <attr name="fbLogI" format="color"/>
+        <attr name="fbLogW" format="color"/>
+        <attr name="fbLogE" format="color"/>
+    </declare-styleable>
+</resources>
