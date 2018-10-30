@@ -73,17 +73,6 @@ public class LogxTest {
     }
 
     @Test
-    public void test004LogxS() {
-        SendLogRunnable sendLogRunnable = new SendLogRunnable() {
-            @Override
-            public void sendLog(File logFile) {
-
-            }
-        };
-        Logx.s(getTodayDate(), sendLogRunnable);
-    }
-
-    @Test
     public void test005LogxFilesInfo() {
         Map<String, Long> map = Logx.getAllFilesInfo();
         if (map != null) {

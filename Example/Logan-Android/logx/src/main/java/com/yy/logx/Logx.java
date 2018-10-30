@@ -37,15 +37,6 @@ public class Logx {
     }
 
     /**
-     * @param dates    日期数组，格式：“2018-07-27”
-     * @param runnable 发送操作
-     * @brief 发送日志
-     */
-    public static void s(String dates[], SendLogRunnable runnable) {
-        sLogxControlCenter.send(dates, runnable);
-    }
-
-    /**
      * @brief 返回所有日志文件信息
      */
     public static Map<String, Long> getAllFilesInfo() {

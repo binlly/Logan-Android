@@ -28,6 +28,5 @@
 -keep public class com.yy.logx.Logx{ *; }
 -keep public class com.yy.logx.LogxConfig{ *; }
 -keep public class com.yy.logx.LogxConfig$Builder{ *; }
--keep public class com.yy.logx.SendLogRunnable{ *; }
 -keep public interface com.yy.logx.LogxProtocolHandler{ *; }
 -keep public interface com.yy.logx.OnLogxProtocolStatus{ *; }

@@ -90,30 +90,6 @@ class LogxControlCenter {
         }
     }
 
-    void send(String dates[], SendLogRunnable runnable) {
-        if (TextUtils.isEmpty(mPath) || dates == null || dates.length == 0) {
-            return;
-        }
-        for (String date : dates) {
-            if (TextUtils.isEmpty(date)) {
-                continue;
-            }
-            long time = getDateTime(date);
-            if (time > 0) {
-                LogxModel model = new LogxModel();
-                SendAction action = new SendAction();
-                model.action = LogxModel.Action.SEND;
-                action.date = String.valueOf(time);
-                action.sendLogRunnable = runnable;
-                model.sendAction = action;
-                mCacheLogQueue.add(model);
-                if (mLogxThread != null) {
-                    mLogxThread.notifyRun();
-                }
-            }
-        }
-    }
-
     void flush() {
         if (TextUtils.isEmpty(mPath)) {
             return;

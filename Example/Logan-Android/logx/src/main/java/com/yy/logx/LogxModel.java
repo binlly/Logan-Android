@@ -12,14 +12,10 @@ class LogxModel {
 
     WriteAction writeAction;
 
-    SendAction sendAction;
-
     boolean isValid() {
         boolean valid = false;
         if (action != null) {
-            if (action == Action.SEND && sendAction != null && sendAction.isValid()) {
-                valid = true;
-            } else if (action == Action.WRITE && writeAction != null && writeAction.isValid()) {
+            if (action == Action.WRITE && writeAction != null && writeAction.isValid()) {
                 valid = true;
             } else if (action == Action.FLUSH) {
                 valid = true;
